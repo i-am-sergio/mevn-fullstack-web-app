@@ -1,7 +1,10 @@
 <template>
-    <h1>TaskList</h1>
-    <ul>
-        <li v-for="(task, index) in tasks" :key="index">
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-action"
+            style="cursor: pointer;" 
+            v-for="(task, index) in tasks" :key="index"
+            @click="$router.push(`/tasks/${task._id}`)">
+            {{ index + 1 }} {{ !task.done ? '✅' : '❌' }}
             {{ task.title }}
         </li>
     </ul>
@@ -16,7 +19,7 @@ export default defineComponent({
     name: 'TaskList',
     data() {
         return {
-            tasks : [] as Task[]
+            tasks: [] as Task[]
         }
     },
     methods: {
