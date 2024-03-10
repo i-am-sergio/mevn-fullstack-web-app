@@ -1,0 +1,13 @@
+{
+  "name": "mevn_fullstack_app",
+  "version": "1.0.0",
+  "description": "This is a fullstack web application",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd server && npm run build && cd ../client && npm run build",
+    "start": "cd server && npm start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
